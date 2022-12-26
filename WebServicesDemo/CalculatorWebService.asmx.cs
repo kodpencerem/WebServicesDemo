@@ -7,7 +7,7 @@ namespace WebServicesDemo
     /// Summary description for CalculatorWebService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [WebServiceBinding(ConformsTo = WsiProfiles.None)]
     [System.ComponentModel.ToolboxItem(false)]
    
     // [System.Web.Script.Services.ScriptService]
@@ -54,6 +54,24 @@ namespace WebServicesDemo
             {
                 return (List<string>)Session["CALCULATIONS"];
             }
+        }
+
+        [WebMethod(MessageName ="UcSayiToplar", Description = "3 Adet Sayıyı Toplar")]
+        public int Add(int firstNumber, int secondNumber,int thirdNumber)
+        {
+           
+            int toplam = firstNumber + secondNumber + thirdNumber;
+
+            return toplam;
+        }
+
+        [WebMethod(MessageName ="DortSayiToplar",Description ="4 Adet Sayıyı Toplar")]
+        public int Add(int firstNumber, int secondNumber,int thirdNumber ,int fourthNumber)
+        {
+
+            int toplam = firstNumber + secondNumber + thirdNumber + fourthNumber;
+
+            return toplam;
         }
     }
 }
