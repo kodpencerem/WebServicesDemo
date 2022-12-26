@@ -14,9 +14,14 @@ namespace CalculatorWebApplication
         {
             CalculatorWebServiceSoapClient client = new CalculatorWebServiceSoapClient();
 
-            string result = client.Add(Convert.ToInt32(txtFirstNumber.Text), Convert.ToInt32(txtSecondNumber.Text));
+            int result = client.Add(Convert.ToInt32(txtFirstNumber.Text), Convert.ToInt32(txtSecondNumber.Text));
 
             lblResult.Text = result.ToString();
+
+            gvCalculations.DataSource=client.GetCalculations();
+            gvCalculations.DataBind();
+
+            gvCalculations.HeaderRow.Cells[0].Text = "Yapılan Son Hesaplamalar";
 
         }
     }

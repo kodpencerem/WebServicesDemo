@@ -36,7 +36,13 @@
             <tr>
                 <td colspan="2">
                     <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click"></asp:Button>
-                </td>
+                </td>          
+            </tr>
+
+             <tr>
+                <td colspan="2">
+                    <asp:GridView ID="gvCalculations" runat="server"></asp:GridView>
+                </td>          
             </tr>
         </table>
     </form>
