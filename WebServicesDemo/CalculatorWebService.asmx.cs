@@ -14,11 +14,11 @@ namespace WebServicesDemo
     {
 
         [WebMethod]
-        public string Add(int firstNumber, int secondNumber)
+        public int Add(int firstNumber, int secondNumber)
         {
-            var toplam = firstNumber + secondNumber;
+            int toplam = firstNumber + secondNumber;
 
-            return "Toplam Sonuç: "+toplam;
+            return toplam;
         }
     }
 }
